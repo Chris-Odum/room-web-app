@@ -1,10 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Staff</title>
 </head>
 <body>
+
+<div style="border: 1px solid; height: 300px; width: 50%;" id="2"><table>
+    <tr>
+        <th>Employee_Id</th>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Position</th>
+    </tr>
+    <!--iterates over a value expected in the model of type room named rooms
+    this format lets us know we need to pass an array of type room to our model for this to work
+    its saying for each room in rooms(placed in the model in room controller class) -->
+    <tr th:each="employee: ${employees}">
+        <td th:text="${employee.id}">Employee_Id</td>
+        <td th:text="${employee.lastName}">Last_Name</td>
+        <td th:text="${employee.firstName}">First_Name</td>
+        <td th:text="${employee.position}">Position</td>
+    </tr>
+</table></div>
+<div style="border: 1px solid; width: 49%; float: right; height: 500px;" id="3">three</div>
+<div style="border: 1px solid; width: 50%; height: 750px;" id="4">four</div>
 
 </body>
 </html>
