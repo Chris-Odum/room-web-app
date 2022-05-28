@@ -2,9 +2,17 @@ package com.chrisodum.sb.landon.roomwebapp.models;
 
 public enum Position {
 
-    HOUSEKEEPING, FRONT_DESK, SECURITY, CONCIERGE;
+    HOUSEKEEPING("Housekeeping"), FRONT_DESK("Frontdesk"), SECURITY("Security"), CONCIERGE("Concierge");
+
+
+    private String regularName;
+
+    Position (String regularName){
+        this.regularName = regularName;
+    }
 
     public String toString(){
+
         switch(this){
             case HOUSEKEEPING:
                 return "Housekeeping";
@@ -16,7 +24,7 @@ public enum Position {
                 return "Security";
 
             case FRONT_DESK:
-                return "Frondesk";
+                return "Frontdesk";
 
             default:
                 return "";
